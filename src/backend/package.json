@@ -1,18 +1,13 @@
 {
-  "name": "@train-reservation-gabon/backend",
+  "name": "train-reservation-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend API Express pour Train Reservation Gabon",
+  "description": "Backend Node.js application - Dependencies managed at root level",
   "main": "config/app.js",
-  "scripts": {
-    "dev": "nodemon config/app.js",
-    "start": "node config/app.js",
-    "test": "jest",
-    "build": "echo \"Backend build completed\""
-  },
-  "keywords": ["api", "express", "nodejs", "postgresql"],
-  "author": "Train Reservation Gabon Team",
-  "license": "MIT",
   "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "start": "node config/app.js",
+    "dev": "nodemon config/app.js",
+    "test": "jest"
+  }
 }

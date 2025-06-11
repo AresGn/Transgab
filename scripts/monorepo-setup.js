@@ -42,19 +42,14 @@ function checkNodeModules() {
 }
 
 function installDependencies() {
-  log('\n📦 Installation des dépendances...', colors.blue);
-  
+  log('\n📦 Installation des dépendances centralisées...', colors.blue);
+
   try {
-    log('🔄 Installation des dépendances racine...', colors.yellow);
+    log('🔄 Installation unique à la racine...', colors.yellow);
     execSync('npm install', { stdio: 'inherit' });
-    
-    log('🔄 Installation des dépendances frontend...', colors.yellow);
-    execSync('cd src/frontend && npm install', { stdio: 'inherit' });
-    
-    log('🔄 Installation des dépendances backend...', colors.yellow);
-    execSync('cd src/backend && npm install', { stdio: 'inherit' });
-    
-    log('✅ Toutes les dépendances installées !', colors.green);
+
+    log('✅ Dépendances centralisées installées !', colors.green);
+    log('💡 Plus besoin d\'installations séparées !', colors.cyan);
   } catch (error) {
     log('❌ Erreur lors de l\'installation des dépendances', colors.red);
     console.error(error.message);
@@ -64,12 +59,36 @@ function installDependencies() {
 
 function cleanNodeModules() {
   log('\n🧹 Nettoyage des node_modules...', colors.blue);
-  
+
   try {
-    execSync('npm run clean', { stdio: 'inherit' });
+    // Nettoyage Windows PowerShell
+    execSync('Remove-Item -Recurse -Force node_modules, src/frontend/node_modules, src/backend/node_modules -ErrorAction SilentlyContinue', { stdio: 'inherit' });
+    execSync('Remove-Item src/frontend/package-lock.json, src/backend/package-lock.json -ErrorAction SilentlyContinue', { stdio: 'inherit' });
     log('✅ Nettoyage terminé !', colors.green);
   } catch (error) {
     log('❌ Erreur lors du nettoyage', colors.red);
+    console.error(error.message);
+  }
+}
+
+function fixMonorepo() {
+  log('\n🔧 Correction de la structure monorepo...', colors.blue);
+
+  try {
+    // Supprimer les package.json des sous-projets s'ils existent
+    if (fs.existsSync('src/frontend/package.json')) {
+      fs.unlinkSync('src/frontend/package.json');
+      log('✅ Supprimé src/frontend/package.json', colors.green);
+    }
+
+    if (fs.existsSync('src/backend/package.json')) {
+      fs.unlinkSync('src/backend/package.json');
+      log('✅ Supprimé src/backend/package.json', colors.green);
+    }
+
+    log('✅ Structure monorepo corrigée !', colors.green);
+  } catch (error) {
+    log('❌ Erreur lors de la correction', colors.red);
     console.error(error.message);
   }
 }
@@ -114,8 +133,12 @@ function main() {
       break;
     case 'setup':
       cleanNodeModules();
+      fixMonorepo();
       installDependencies();
       showStatus();
+      break;
+    case 'fix':
+      fixMonorepo();
       break;
     default:
       log('\n📖 Commandes disponibles:', colors.cyan);
