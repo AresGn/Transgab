@@ -1,0 +1,121 @@
+# =============================================
+# .gitignore - Train Reservation Gabon
+# Monorepo React + Node.js optimisé
+# =============================================
+
+# ==================== DÉPENDANCES ====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+package-lock.json
+yarn.lock
+
+# ==================== ENVIRONNEMENT ====================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==================== BUILD ET DIST ====================
+build/
+dist/
+out/
+src/frontend/build/
+src/backend/dist/
+
+# ==================== CACHE ====================
+.cache/
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# ==================== LOGS ====================
+logs/
+*.log
+src/backend/logs/
+
+# ==================== COVERAGE ====================
+coverage/
+*.lcov
+.nyc_output/
+
+# ==================== TESTS ====================
+.jest/
+test-results/
+
+# ==================== ÉDITEURS ====================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ==================== SYSTÈME ====================
+.DS_Store
+._*
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ==================== TEMPORAIRES ====================
+uploads/
+temp/
+tmp/
+*.tmp
+*.temp
+
+# ==================== BASE DE DONNÉES ====================
+*.sqlite
+*.sqlite3
+*.db
+*.sql.gz
+*.dump
+*.backup
+
+# ==================== SÉCURITÉ ====================
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+
+# ==================== DÉPLOIEMENT ====================
+.vercel/
+.netlify/
+.firebase/
+.serverless/
+
+# ==================== SPÉCIFIQUE AU PROJET ====================
+config/local.js
+config/local.json
+test-data/
+mock-data/
+docs/generated/
+api-docs/
+*.bak
+*.backup
+*.old
+
+# ==================== OUTILS DE DÉVELOPPEMENT ====================
+.husky/_/
+storybook-static/
+src/backend/sessions/
+
+# ==================== DIVERS ====================
+*.prof
+*.heap
+*.cpuprofile
+benchmark-results/

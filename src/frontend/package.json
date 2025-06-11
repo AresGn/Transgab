@@ -1,0 +1,16 @@
+{
+  "name": "@train-reservation-gabon/frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend React pour Train Reservation Gabon",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "proxy": "http://localhost:5000"
+}
