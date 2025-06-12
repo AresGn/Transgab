@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "train-reservation-gabon",
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build:vercel",
   "outputDirectory": "build",
   "installCommand": "npm install",
   "framework": null,

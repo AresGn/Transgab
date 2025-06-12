@@ -19,7 +19,8 @@ Ce projet utilise une structure monorepo avec :
 2. `build:frontend` : Build React dans src/frontend/build
 3. `build:backend` : Placeholder pour le backend
 4. `build:copy` : Copie src/frontend/build vers ./build
-5. `postbuild` : Confirmation du build
+5. `build:vercel` : Script optimisé pour Vercel (frontend + copy)
+6. `postbuild` : Validation du build avec scripts/validate-build.js
 
 ## Variables d'Environnement Vercel
 
@@ -31,6 +32,9 @@ Assurez-vous de configurer ces variables dans Vercel :
 
 ### Erreur "No Output Directory named 'build' found"
 ✅ Résolu par la création du script `build:copy`
+
+### Erreur "Could not find a required file. Name: index.js"
+✅ Résolu par la correction du .vercelignore (suppression de src/frontend/src)
 
 ### Warning Tailwind CSS content configuration
 ✅ Résolu par la mise à jour de tailwind.config.js
