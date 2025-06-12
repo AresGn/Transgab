@@ -8,9 +8,11 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:frontend": "cd src/frontend && react-scripts start",
     "dev:backend": "cd src/backend && nodemon config/app.js",
-    "build": "npm run build:frontend && npm run build:backend",
+    "build": "npm run build:frontend && npm run build:backend && npm run build:copy",
     "build:frontend": "cd src/frontend && react-scripts build",
     "build:backend": "cd src/backend && echo \"Backend build completed\"",
+    "build:copy": "rimraf build && node -e \"require('fs-extra').copySync('src/frontend/build', 'build')\"",
+    "postbuild": "echo \"Build completed successfully. Output directory: build\"",
     "start": "node src/backend/config/app.js",
     "start:frontend": "serve -s src/frontend/build",
     "test": "npm run test:frontend && npm run test:backend",
@@ -30,7 +32,9 @@
     "monorepo:clean": "node scripts/monorepo-setup.js clean",
     "monorepo:status": "node scripts/monorepo-setup.js status",
     "monorepo:setup": "node scripts/monorepo-setup.js setup",
-    "monorepo:fix": "node scripts/monorepo-setup.js fix"
+    "monorepo:fix": "node scripts/monorepo-setup.js fix",
+    "clean:frontend-modules": "rimraf src/frontend/node_modules",
+    "prebuild": "npm run clean:frontend-modules"
   },
   "keywords": [
     "train",
@@ -74,6 +78,7 @@
   "devDependencies": {
     "concurrently": "^8.2.0",
     "eslint": "^8.57.0",
+    "fs-extra": "^11.3.0",
     "jest": "^27.5.1",
     "nodemon": "^3.1.10",
     "prettier": "^3.0.0",
