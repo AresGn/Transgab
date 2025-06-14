@@ -1,8 +1,8 @@
-import React from 'react';
+// HeroSection component for TransGabon application
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Image de fond */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -32,52 +32,27 @@ const HeroSection = () => {
         </p>
         
         <div className="mb-12">
-          <p className="text-lg sm:text-xl text-gray-300 mb-6">
+          <p className="text-lg sm:text-xl text-gray-300 mb-8">
             Découvrez le réseau ferroviaire gabonais avec nos trains modernes
           </p>
-          
-          {/* Statistiques rapides */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-3xl font-bold text-yellow-400">22</div>
-              <div className="text-sm text-gray-300">Gares desservies</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-3xl font-bold text-yellow-400">2</div>
-              <div className="text-sm text-gray-300">Types de trains</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-3xl font-bold text-yellow-400">3</div>
-              <div className="text-sm text-gray-300">Jours de départ</div>
-            </div>
-          </div>
         </div>
         
         {/* Boutons d'action */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-            🔍 Rechercher un train
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-3">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            Rechercher un train
           </button>
-          <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
-            📋 Voir les horaires
+          <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-3">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Voir les horaires
           </button>
         </div>
-        
-        {/* Informations sur les types de trains */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
-            <h3 className="text-xl font-bold mb-3 text-yellow-400">🚆 Train Omnibus</h3>
-            <p className="text-gray-300 text-sm">
-              Dessert toutes les 22 gares du réseau. Idéal pour les trajets locaux et régionaux.
-            </p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
-            <h3 className="text-xl font-bold mb-3 text-yellow-400">🚅 TSA Express</h3>
-            <p className="text-gray-300 text-sm">
-              Service rapide avec seulement 7 arrêts principaux. Parfait pour les longs trajets.
-            </p>
-          </div>
-        </div>
+
       </div>
       
       {/* Indicateur de scroll */}

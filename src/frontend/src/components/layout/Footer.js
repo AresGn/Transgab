@@ -4,22 +4,24 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Section principale du footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
           {/* Informations sur TransGabon */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-4">
+          <div className="lg:col-span-1">
+            <div className="flex items-center mb-4 gap-3">
+              <svg className="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
               <span className="text-2xl font-bold text-yellow-400">
-                🚂 TransGabon
+                TransGabon
               </span>
             </div>
-            <p className="text-gray-300 mb-4 leading-relaxed">
-              Le système de réservation officiel du réseau ferroviaire gabonais. 
-              Voyagez en toute sécurité et confort à travers le Gabon avec nos 
-              trains modernes Omnibus et TSA Express.
+            <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+              Le système de réservation officiel du réseau ferroviaire gabonais.
+              Voyagez en toute sécurité et confort à travers le Gabon.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-start">
               <button
                 type="button"
                 className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
@@ -84,53 +86,68 @@ const Footer = () => {
 
           {/* Contact et support */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-yellow-400">Contact & Support</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center text-gray-300">
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <h3 className="text-lg font-semibold mb-6 text-yellow-400">Contact & Support</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <svg className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                 </svg>
-                +241 01 XX XX XX
-              </li>
-              <li className="flex items-center text-gray-300">
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <div>
+                  <p className="text-gray-300 text-sm">+241 01 XX XX XX</p>
+                  <p className="text-gray-400 text-xs">Support téléphonique</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <svg className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
-                contact@transgabon.ga
-              </li>
-              <li className="flex items-center text-gray-300">
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <div>
+                  <p className="text-gray-300 text-sm">contact@transgabon.ga</p>
+                  <p className="text-gray-400 text-xs">Support par email</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <svg className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
-                Libreville, Gabon
-              </li>
-            </ul>
-            
-            <div className="mt-4">
-              <p className="text-sm text-gray-400 mb-2">Heures d'ouverture :</p>
-              <p className="text-sm text-gray-300">Lun - Ven : 8h00 - 18h00</p>
-              <p className="text-sm text-gray-300">Sam : 8h00 - 14h00</p>
+                <div>
+                  <p className="text-gray-300 text-sm">Libreville, Gabon</p>
+                  <p className="text-gray-400 text-xs">Siège social</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-gray-800">
+              <p className="text-sm text-yellow-400 mb-2 font-medium">Heures d'ouverture</p>
+              <div className="space-y-1">
+                <p className="text-xs text-gray-300">Lun - Ven : 8h00 - 18h00</p>
+                <p className="text-xs text-gray-300">Sam : 8h00 - 14h00</p>
+                <p className="text-xs text-gray-400">Dim : Fermé</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Section du bas */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 TransGabon. Tous droits réservés. | Système de réservation officiel du réseau ferroviaire gabonais.
+      <div className="border-t border-gray-800 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+            <div className="text-gray-400 text-sm text-center lg:text-left">
+              © 2024 TransGabon. Tous droits réservés.
+              <span className="block lg:inline lg:ml-2 text-xs text-gray-500">
+                Système de réservation officiel du réseau ferroviaire gabonais.
+              </span>
             </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#privacy" className="text-gray-400 hover:text-white transition-colors duration-200">
+            <div className="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+              <a href="#privacy" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                 Politique de confidentialité
               </a>
-              <a href="#terms" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="#terms" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                 Conditions d'utilisation
               </a>
-              <a href="#cookies" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="#cookies" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
                 Cookies
               </a>
             </div>
